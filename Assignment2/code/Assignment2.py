@@ -9,7 +9,7 @@ def verify(X,Y):
     else:
         for i in range(len(X)):
             for j in range(len(X[0])):
-                if(round( X[i][j],3)!=round( X[i][j],3)):
+                if(round( X[i][j],3)!=round( Y[i][j],3)):
                     value=0
     return value
     
