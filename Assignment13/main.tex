@@ -1,0 +1,244 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 13}
+\author{Pulkit Saxena}
+\maketitle
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\section{\textbf{Problem hoffman pg208/1A}}
+%
+Find an invertible matrix $\vec{P}$ such that $\vec{P^{-1}AP}$ and $\vec{P^{-1}BP}$ are both diagonal where $\vec{A}$ and $\vec{B}$ are real matrices.
+\begin{enumerate}
+    \item $\Vec{A}=\myvec{1&2\\0&2} , \Vec{B}=\myvec{3&-8\\0&-1}$ 
+    \end{enumerate}
+\section{\textbf{Theorem's}}
+\renewcommand{\thetable}{1}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c|l|}
+   
+	\hline
+	\multirow{3}{*}{Theorem}
+    &\\
+    & According  to theorem , if a $2\times 2$ matrix has two characteristics \\
+    &\\
+    & values then the $\vec{P}$ that diagonalize $\vec{A}$ will
+    necessarily also   \\
+    &\\
+    & diagonalize any $\vec{B}$ that commutes with $\vec{A}$. \\
+    &\\
+    \hline 
+    &\\
+    Common Basis
+    &Let there exist a $\vec{P}$ in basis $\vec{\beta}=\{\vec{b}_1,.....,\vec{b}_n\}$ of $\mathbb{V}$ consisting of eigen vector\\& which are common to both $\vec{A}$ and $\vec{B}$ such that\\
+    &\\
+    &$\qquad\qquad\qquad\vec{A}\vec{b}_i=\lambda_{i}\vec{b}_i$\\
+    &\\
+    &$\qquad\qquad\qquad\vec{B}\vec{b}_i=\mu_{i}\vec{b}_i$\\
+    &\\
+    &$\qquad\qquad\qquad\Lambda_{A}=\myvec{\lambda_1&0\\0&\lambda_2}$\\
+    &\\
+    &$\qquad\qquad\qquad\Lambda_{B}=\myvec{\mu_1&0\\0&\mu_2}$\\
+    &\\
+    &$\qquad\qquad\qquad\Lambda_{A}=\vec{P^{-1}AP}$\\
+    &\\
+    &$\qquad\qquad\qquad\Lambda_{B}=\vec{P^{-1}BP}$\\
+    &\\
+    \hline
+
+    
+\end{tabular}
+\label{table:1}
+    \caption{Theorems }
+\end{table}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|c|l|l|}
+   \hline
+   \multirow{3}{*}
+   &&\\
+   Operations&Matrix A&Matrix B\\
+   \hline
+   &&\\
+   Characteristic Polynomial&$p\brak{x}=\mydet{x\Vec{I}-\Vec{A}}$&$p\brak{x}=\mydet{x\Vec{I}-\Vec{B}}$\\
+	& $\qquad = \mydet{x-1&-2\\0&x-2}$ &$\qquad = \mydet{x-3&8\\0&x+1}$ \\
+	&$\qquad=\brak{x-1}\brak{x-2}$&$\qquad=\brak{x-3}\brak{x+1}$ \\
+ \hline
+ &&\\
+ Characteristic values&$p\brak{x}=0$&$p\brak{x}=0$\\
+ &$\brak{x-1}\brak{x-2}=0$&$\brak{x-3}\brak{x+1}=0$\\
+ &$\lambda_1=1$ ,$\lambda_2=2$&$\mu_1=3$ , $\mu_2=-1$\\ 
+ \hline
+ &&\\
+ Basis for Characteristics Values& For $\lambda_1=1$& For $\mu_1=3$\\
+ &&\\
+ &$(\vec{A}-\lambda_1\vec{I})\vec{b_1}=0$&$(\vec{B}-\mu_1\vec{I})\vec{b_1}=0$\\
+ &&\\
+ &$\brak{\myvec{1&2\\0&2}-\myvec{1&0\\0&1}}\vec{b_1}=0$&$\brak{\myvec{3&-8\\0&-1}-3\myvec{1&0\\0&1}}\vec{b_1}=0$\\
+ &&\\
+ &$\brak{\myvec{0&2\\0&1}}\vec{b_1}=0$&$\brak{\myvec{0&-8\\0&-4}}\vec{b_1}=0$\\
+ &&\\
+ & $\vec{b_1}=\myvec{1\\0}$&$\vec{b_1}=\myvec{1\\0}$\\
+ &&\\
+ & For $\lambda_2=2$& For $\mu_2=-1$\\
+ &&\\
+ &$(\vec{A}-\lambda_2\vec{I})\vec{b_2}=0$&$(\vec{B}-\mu_2\vec{I})\vec{b_2}=0$\\
+ &&\\
+ &$\brak{\myvec{1&2\\0&2}-2\myvec{1&0\\0&1}}\vec{b_2}=0$&$\brak{\myvec{3&-8\\0&-1}-(-1)\myvec{1&0\\0&1}}\vec{b_2}=0$\\
+ &&\\
+ &$\brak{\myvec{-1&2\\0&0}}\vec{b_2}=0$&$\brak{\myvec{4&-8\\0&0}}\vec{b_2}=0$\\
+ &&\\
+ & $\vec{b_2}=\myvec{2\\1}$&$\vec{b_2}=\myvec{2\\1}$\\
+ &&\\
+ &$\vec{P}=\myvec{1&2\\0&1}$&$\vec{P}=\myvec{1&2\\0&1}$\\
+ \hline
+ \newpage
+ \hline
+ \multirow{3}{*}
+ &&\\
+ Verification& $\Lambda_A=\myvec{1&0\\0&2}$ & $\Lambda_B=\myvec{3&0\\0&-1}$\\
+ &&\\
+ &$\Lambda_{A}=\vec{P^{-1}AP}$&$\Lambda_{B}=\vec{P^{-1}BP}$\\
+ &&\\
+ &$\implies\myvec{1&-2\\0&1}\myvec{1&2\\0&2}\myvec{1&2\\0&1}$&$\implies\myvec{1&-2\\0&1}\myvec{3&-8\\0&-1}\myvec{1&2\\0&1}$\\
+ &&\\
+&$=\myvec{1&0\\0&2}=\Lambda_A$ & $=\myvec{3&0\\0&-1}=\Lambda_B$\\
+&&\\
+\hline
+&&\\
+Answer.The Invertible Matrix $\vec{P}$&$\vec{P}=\myvec{1&2\\0&1}$&$\vec{P}=\myvec{1&2\\0&1}$\\
+&&\\
+\hline
+	
+	\caption{Solution Table}
+    \label{table:2}
+\end{longtable}
+\end{document}
