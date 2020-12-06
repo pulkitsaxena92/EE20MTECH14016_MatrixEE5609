@@ -1,0 +1,343 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 16}
+\author{Pulkit Saxena}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section{\textbf{Problem Hoffman Pg 242 Q7}}
+ Find the minimal polynomials and the rational forms of  the following real matrices\\
+ \begin{enumerate}
+     \item \myvec{0&-1&-1\\1&0&0\\-1&0&0}
+     \item \myvec{c&0&-1\\0&c&1\\1&1&c}
+     \item \myvec{\cos\theta&\sin\theta\\-\sin\theta&\cos\theta}
+ \end{enumerate}
+
+ 
+\section{\textbf{Theorems}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+\hline
+\multirow{3}{*}{Theorem 1} & \\
+&A Rational canonical form is a matrix $\vec{R}$ that is Direct sum of companion matrix.\\
+&\\
+&$\vec{R}=\vec{C(p_1)}\oplus\dots\oplus\vec{C(p_r)}$\\
+&\\
+&\parbox{10cm}
+	{\begin{align}
+	\vec{R}=
+	\myvec{\vec{C(p_1)}&0&0&\dots&0\\
+	0&\vec{C(p_2)}&0&\dots&0\\
+	\vdots & \vdots & \vdots & \dots & \vdots\\
+	0&0&0&\dots&\vec{C(p_r)}}
+	\end{align}}\\
+	&\\
+&where $\vec{C(p_i)}$ is the $k_i$ x $k_i$ companion matrix of $p_i$ where polynomial $p_1,p_2\dots p_r$ are called\\
+&\\
+&invariant factors for Given Matrix .Where $k_i$ denotes the degree of annihilator of $p_i$.\\
+&\\
+&This representation is called rational form.\\
+
+\hline
+\multirow{3}{*}{Theorem 2} & \\
+&If $p_i(x)=x+a_0$ then its companion matrix $\vec{C(p)}$ is 1 x 1 matrix as $\myvec{-a_0}$.\\
+&\\
+&If $k_i$ $\geq 2$ then $p(x)=x^k+a_{k-1}x^{k-1}+\dots+a_1x+a_0 $ then its companion matrix is\\
+&\\
+&\parbox{10cm}
+	{\begin{align}
+	\vec{C(p_i)}=
+	\myvec{0&0&0&\dots&0&-a_0\\
+	1&0&0&\dots&0&-a_1\\
+	0&1&0&\dots&0&-a_2\\
+	0&0&1&\dots&0&-a_3\\
+	\vdots & \vdots & \vdots & \dots & \vdots& \vdots\\
+	0&0&0&\dots&1&-a_{k-1}}
+	\end{align}}\\
+
+\hline
+\caption{Illustration of theorem.}
+\label{table:1}
+\end{longtable}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
+\hline
+\multirow{3}{*}{Given part 1} & \\
+&$\vec{A}=\myvec{0&-1&-1\\1&0&0\\-1&0&0}$\\
+&\\
+\hline
+
+
+\multirow{3}{*}{Characteristics and Minimal Polynomial} & \\
+&
+Characteristics polynomial of the matrix  is $det(x\vec{I}-\vec{A})$\\ 
+&\\
+& $\det(x\vec{I}-\vec{A})$= $\left|
+                \begin{array}{ccc}
+                (x) & 1 & 1\\
+                -1 & (x) & 0\\
+                1 & 0 & (x)
+                \end{array} \right|$ =$x\brak{x^2}-1\brak{-x}-x=x^3$\\
+&\\
+& Characteristic Polynomial = $x^3$\\
+&\\
+& Minimal Polynomial can be $x,x^2$ or $x^3$ of lowest degree\\
+&\\
+&satisfying $p(\vec{A})=0$    \\
+&\\
+&Let take $p\brak{x}=x\implies p(\vec{A})=\vec{A}=\myvec{0&-1&-1\\1&0&0\\-1&0&0}\neq0$\\
+&\\
+&Let take $p\brak{x}=x^2\implies p(\vec{A})=\vec{A}^2=\myvec{0&-1&-1\\1&0&0\\-1&0&0}\neq0$\\
+&\\
+&Take $p\brak{x}=x^3\implies p\brak{\vec{A}} =\vec{A}^3=\myvec{0&0&0\\0&0&0\\0&0&0}=\vec{0}$\\
+&\\
+&Thus minimal polynomial $p\brak{x}=x^3$.\\  
+&\\
+\hline
+\multirow{3}{*}{Companion Matrix and Rational Form} & \\
+&Since\\
+&\\
+&Characteristics polynomial$=$Minimal polynomial$=$Invariant factors\\
+&\\
+&$p\brak{x}=x^3+0x^2+0x+0$\\
+&\\
+&So Companion Matrix is of dimention 3x3 and from theorem 2\\
+&\\
+&$\vec{C(p)}=\myvec{0&0&0\\1&0&0\\0&1&0}$\\
+&\\
+&Since there is only one minimal polynomial of degree 3 
+which is\\ &equal to characteristics equation therefore\\ &Rational matix=companion matrix\\ 
+&$\vec{R}=\vec{C(p)}=\myvec{0&0&0\\1&0&0\\0&1&0}$\\
+&\\
+&which is in rational form.\\
+&\\
+\hline \hline
+&\\
+
+
+
+
+\multirow{3}{*}{Given Part 2} & \\
+&$\vec{A}=\myvec{c&0&-1\\0&c&1\\1&1&c}$\\
+&\\
+\hline
+
+
+\multirow{3}{*}{Characteristics and Minimal Polynomial} & \\
+&
+Characteristics polynomial of the matrix  is $det(x\vec{I}-\vec{A})$\\ 
+&\\
+& $\det(x\vec{I}-\vec{A})$= $\left|
+                \begin{array}{ccc}
+                (x-c) & 0 & 1\\
+                0 & (x-c) & -1\\
+                -1 & -1 & (x-c)
+                \end{array} \right|$\\ &=$\brak{x-c}\brak{\brak{x-c}^2+1}-\brak{x-c}=\brak{x-c}^3$\\
+&\\
+& Characteristic Polynomial = $\brak{x-c}^3$\\
+&\\
+& Minimal Polynomial can be $\brak{x-c},\brak{x-c}^2$ or $\brak{x-c}^3$ \\
+&\\
+&of lowest degree satisfying $p(\vec{A})=0$    \\
+&\\
+&Let take $p\brak{x}=\brak{x-c}\implies p(\vec{A})=\vec{A}-c\vec{I}=\myvec{0&0&-1\\0&0&1\\1&1&0}\neq0$\\
+&\\
+&Let take $p\brak{x}=\brak{x-c}^2\implies p(\vec{A})=\brak{\vec{A}-c\vec{I}}^2=\myvec{-1&-1&0\\1&1&0\\0&0&0}\neq0$\\
+&\\
+&Take $p\brak{x}=\brak{x-c}^3\implies p\brak{\vec{A}} =\brak{\vec{A}-c\vec{I}}^3=\myvec{0&0&0\\0&0&0\\0&0&0}=\vec{0}$\\
+&\\
+&Thus minimal polynomial $p\brak{x}=\brak{x-c}^3$.\\  
+&\\
+\hline
+\multirow{3}{*}{Companion Matrix and Rational Form} & \\
+&Since\\
+&\\
+&Characteristics polynomial$=$Minimal polynomial$=$Invariant factors\\
+&\\
+&$p\brak{x}=x^3-3cx^2+3c^2x-c^3$\\
+&\\
+&So Companion Matrix is of dimention 3x3 and from theorem 2\\
+&\\
+&$\vec{C(p)}=\myvec{0&0&c^3\\1&0&-3c^2\\0&1&3c}$\\
+&\\
+&Since there is only one minimal polynomial of degree 3 
+which is\\ &equal to characteristics equation therefore\\ &Rational matix=companion matrix\\ 
+&$\vec{R}=\vec{C(p)}=\myvec{0&0&c^3\\1&0&-3c^2\\0&1&3c}$\\
+&\\
+&which is in rational form.\\
+&\\
+\hline \hline
+\multirow{3}{*}{Given part 3} & \\
+&$\vec{A}=\myvec{\cos\theta&\sin\theta\\-\sin\theta&\cos\theta}$\\
+&\\
+\hline
+
+
+\multirow{3}{*}{Characteristics and Minimal Polynomial} & \\
+&
+Characteristics polynomial of the matrix  is $det(x\vec{I}-\vec{A})$\\ 
+&\\
+& $\det(x\vec{I}-\vec{A})$= $\left|
+                \begin{array}{ccc}
+                (x-\cos\theta) & -\sin\theta\\
+                \sin\theta & (x-\cos\theta)\\
+                \end{array} \right|$ =$x^2-2\cos\theta x +1$\\
+&\\
+& Characteristic Polynomial =Minimal Polynomial=$x^2-2\cos\theta x +1$\\
+&\\
+
+\hline
+\multirow{3}{*}{Companion Matrix and Rational Form} & \\
+&Since\\
+&\\
+&Characteristics polynomial$=$Minimal polynomial$=$Invariant factors\\
+&\\
+&$p\brak{x}=x^2-2\cos\theta x +1$\\
+&\\
+&So Companion Matrix is of dimention 2x2 and from theorem 2\\
+&\\
+&$\vec{C(p)}=\myvec{0&-1\\1&2\cos\theta}$\\
+&\\
+&Since there is only one minimal polynomial of degree 3 
+which is\\ &equal to characteristics equation therefore\\ &Rational matix=companion matrix\\ 
+&$\vec{R}=\vec{C(p)}=\vec{C(p)}=\myvec{0&-1\\1&2\cos\theta}$\\
+&\\
+&which is in rational form.\\
+&\\
+\hline
+
+\caption{Solution Table}
+\label{table:2}
+\end{longtable}
+\end{document}
