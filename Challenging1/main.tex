@@ -1,0 +1,248 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Challenging Problem}
+\author{Pulkit Saxena}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section{\textbf{Problem}}
+Let $W_1$ and $W_2$ be subspaces of a finite-dimensional vector space $\mathbb V$. Prove that
+\begin{enumerate}
+    \item $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$
+    \item $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$
+\end{enumerate}
+\section{\textbf{Solutions}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+\hline
+\multirow{3}{*}{Proof of $W_1+W_2={W_1\cup W_2}$ } & \\
+& If $W_1$ and $W_2$ are subspace of vector space $\mathbb{V}$ over a Field F then\\
+&1) $W_1+W_2$ is a subspace of $\mathbb{V}$\\
+&2)span$\brak{W_1\cup W_2}=W_1+W_2$ or $W_1+W_2={W_1\cup W_2}$\\
+&\\
+&\textbf{Proof of $W_1+W_2$ is a subspace of $\mathbb{V}$ }\\
+&\\
+&Let $a_1 ,a_2 \in W_1$ and $b_1,b_2 \in W_2$ and two scalar $\alpha$ and $\beta \in$ F\\
+&$\alpha\vec{a}+\beta\vec{b}=\alpha(a_1+a_2)+\beta(b_1+b_2)=\alpha a_1+\beta b_1+\alpha a_2+\beta b_2$\\
+&$\implies W_1+W_2\in\mathbb{V}$\\
+&\\
+&\textbf{Proof of span$\brak{W_1\cup W_2}=W_1+W_2$ or span$(W_1+W_2)={W_1\cup W_2}$ }\\
+&\\
+&$0\in W_2$\\
+&Let $a_1\in W_1$\\
+&$a_1=a_1+0\implies a_1\in W_1+W_2$ thus $W_1\subseteq W_1+W_2$ Similarly $W_2\subseteq W_1+W_2$\\
+&\\
+&\textbf{We need to show $W_1+W_2\subseteq$ span$(W_1\cup W_2)$ and span$(W_1\cup W_2)\subseteq W_1+W_2$}\\ 
+&\\
+&Let $a=a_1+b_1$ be any element of $W_1+W_2$\\
+&Then $a_1\in W_1$ and $a_2\in W_2$\\
+&therefore $a_1\in W_1\cup W_2$ and $b_1\in W_1\cup W_2$\\
+&We can write $a_1+b_1=1a_1+1b_1$ Thus $a_1$ and $b_1$ is a linear combination \\
+&of finite number of elements $a_1,b_1\in W_1\cup W_2$\\
+&$\implies a_1+b_1\in$ span$(W_1 \cup W_2)$\\
+&$\implies W_1+W_2\in$ span$(W_1 \cup W_2)$\\
+&\\
+&\textbf{Now to prove span$(W_1\cup W_2)\subseteq W_1+W_2$}\\
+&span$(W_1\cup W_2)$ is the smallest subspace containing $W_1\cup W_2$ and $W_1+W_2 $is a\\ 
+&subspace of containing $W_1\cup W_2\implies span(W_1\cup W_2)\subseteq W_1 + W_2$\\
+&\\
+&Hence we proved $W_1+W_2=W_1\cap W_2$.\\
+&From this proof the above equation can be modified as De-Morgan's law.\\
+&\\
+\hline
+&\\
+\newpage
+\hline
+&\\
+Proof $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$ & From the above proof we can Modify as De-Morgan's Law as \\
+&\\
+&$(W_1\cup W_2)' = W_1' \cap W_2'$\\
+&\\
+&Let $x\in(W_1\cup W_2)'$\\
+&\\
+&$\implies x \not\in (W_1\cup W_2)$\\
+&\\
+&$\implies x \not\in W_1$ and $x \not\in W_2)$\\
+&\\
+&$\implies x \in W_1'$ and $x \in W_2')$\\
+&\\
+&$\implies x\in W_1'\cap W_2'$\\
+&\\
+& $\implies (W_1\cup W_2)' = W_1' \cap W_2'$\\
+&\\
+&Therefore $(W_1 + W_2)^0 = W_1^0 \cap W_2^0$. Hence proved.\\
+&\\
+\hline
+&\\
+Proof $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$ & From the above proof we can Modify as De-Morgan's Law as \\
+&\\
+&$(W_1\cap W_2)' = W_1' \cup W_2'$\\
+&\\
+&Let $x\in(W_1\cap W_2)'$\\
+&\\
+&$\implies x \not\in (W_1\cap W_2)$\\
+&\\
+&$\implies x \not\in W_ 1$ OR $x \not\in W_2)$\\
+&\\
+&$\implies x \in W_ 1'$ OR $x \in W_2')$\\
+&\\
+&$\implies x\in W_1'\cup W_2'$\\
+&\\
+&$\implies(W_1 \cup W_2)' = W_1' \cup W_2'$.\\ 
+&\\
+&Therefore $(W_1 \cap W_2)^0 = W_1^0 + W_2^0$Hence proved.\\
+&\\
+\hline
+
+\caption{Solution Table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\label{table:1}
+\end{longtable}
+
+\end{document}
+
+
+
